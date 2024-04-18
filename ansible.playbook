@@ -12,6 +12,7 @@
         name:
           - httpd
           - git
+          - wget
         state: latest
 
     - name: stop httpd
