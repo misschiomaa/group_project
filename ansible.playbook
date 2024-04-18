@@ -1,0 +1,30 @@
+---
+- hosts:
+    - group1
+  become: true
+
+  tasks:
+    - name: ping all servers
+      ping:
+
+    - name: installing httpd,git
+      yum:
+        name:
+          - httpd
+          - git
+        state: latest
+
+    - name: stop httpd
+      service:
+        name: httpd
+        state: stopped
+
+    - name: start httpd
+      service:
+        name: httpd
+        state: started
+
+    # - name: installing git
+    #  yum:
+    #   name: git
+    #  state: latest
